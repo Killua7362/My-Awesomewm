@@ -1,3 +1,5 @@
+--made by killua
+
 pcall(require, "luarocks.loader")
 -- Standard awesome library
 local gears = require("gears")
