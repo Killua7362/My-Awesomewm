@@ -45,7 +45,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytasklist = require("decor.bar.modules.tasklist")(s)
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s ,height = 25})
+    s.mywibox = awful.wibar({ position = "top", screen = s ,height = 35})
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -71,7 +71,16 @@ awful.screen.connect_for_each_screen(function(s)
             },
             s.mypromptbox,
         },
-        s.mytasklist, -- Middle widget
+        {
+            {
+                s.mytasklist,
+               -- bg = beautiful.xcolor0,
+                --shape = helpers.rrect(beautiful.border_radius - 3),
+                widget = wibox.container.background
+            },
+            margins = dpi(5),
+            widget = wibox.container.margin
+        }, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
