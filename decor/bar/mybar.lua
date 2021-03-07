@@ -8,44 +8,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
-local taglist_buttons = gears.table.join(
-                    awful.button({ }, 1, function(t) t:view_only() end),
-                    awful.button({ main_var.modkey }, 1, function(t)
-                                              if client.focus then
-                                                  client.focus:move_to_tag(t)
-                                              end
-                                          end),
-                    awful.button({ }, 3, awful.tag.viewtoggle),
-                    awful.button({ main_var.modkey }, 3, function(t)
-                                              if client.focus then
-                                                  client.focus:toggle_tag(t)
-                                              end
-                                          end),
-                    awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
-                    awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
-                )
 
-local tasklist_buttons = gears.table.join(
-    awful.button({ }, 1, function (c)
-                                if c == client.focus then
-                                    c.minimized = true
-                                else
-                                    c:emit_signal(
-                                        "request::activate",
-                                        "tasklist",
-                                        {raise = true}
-                                    )
-                                end
-                            end),
-    awful.button({ }, 3, function()
-                                awful.menu.client_list({ theme = { width = 250 } })
-                            end),
-    awful.button({ }, 4, function ()
-                                awful.client.focus.byidx(1)
-                            end),
-    awful.button({ }, 5, function ()
-                                awful.client.focus.byidx(-1)
-                            end))
 
 
 awful.screen.connect_for_each_screen(function(s)
@@ -65,18 +28,10 @@ awful.screen.connect_for_each_screen(function(s)
                             awful.button({ }, 4, function () awful.layout.inc( 1) end),
                             awful.button({ }, 5, function () awful.layout.inc(-1) end)))
     -- Create a taglist widget
-    s.mytaglist = awful.widget.taglist {
-        screen  = s,
-        filter  = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons
-    }
+    s.mytaglist = require("decor.bar.modules.taglist")(s)
 
     -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist {
-        screen  = s,
-        filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
-    }
+    s.mytasklist = require("decor.bar.modules.tasklist")(s)
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })

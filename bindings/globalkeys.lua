@@ -2,7 +2,7 @@ local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local gears = require("gears")
 local menubar = require("menubar")
-
+local main_var = require("misc.main_var")
 
 globalkeys = gears.table.join(
     awful.key({ main_var.modkey,           }, "s",      hotkeys_popup.show_help,

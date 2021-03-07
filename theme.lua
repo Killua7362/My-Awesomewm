@@ -5,11 +5,31 @@
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
-
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
 
+
+
+
 local theme = {}
+theme.xbackground =  "#1a2026"
+theme.xforeground =  "#ffffff"
+theme.xcolor0 ="#29343d"
+theme.xcolor1 = "#f9929b"
+theme.xcolor2 = "#7ed491"
+theme.xcolor3 ="#fbdf90"
+theme.xcolor4 =  "#a3b8ef"
+theme.xcolor5 =  "#ccaced"
+theme.xcolor6 = "#9ce5c0"
+theme.xcolor7 =  "#ffffff"
+theme.xcolor8 = "3b4b58"
+theme.xcolor9 =  "#fca2aa"
+theme.xcolor10 = "#a5d4af"
+theme.xcolor11 = "#fbeab9"
+theme.xcolor12 = "#bac8ef"
+theme.xcolor13 = "#d7c1ed"
+theme.xcolor14 = "#c7e5d6"
+theme.xcolor15 = "#eaeaea"
 
 theme.font          = "sans 8"
 
