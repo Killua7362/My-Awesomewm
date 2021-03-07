@@ -44,12 +44,23 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(0)
+theme.useless_gap   = dpi(10)
 theme.border_width  = dpi(1)
 theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
 
+
+-- Borders
+
+theme.border_width = dpi(1)
+theme.oof_border_width = dpi(0)
+theme.border_normal = theme.xcolor0
+theme.border_focus = theme.xcolor0
+theme.border_radius = dpi(12)
+theme.client_radius = dpi(12)
+theme.widget_border_width = dpi(1)
+theme.widget_border_color = theme.xcolor0
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:

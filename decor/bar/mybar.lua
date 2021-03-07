@@ -1,14 +1,25 @@
 local wibox = require("wibox")
 local awful = require("awful")
 local gears = require("gears")
+local beautiful = require("beautiful")
+local xresources = require("beautiful.xresources")
+local dpi = xresources.apply_dpi
+local helpers = require("helpers")
+
+
+local function format_progress_bar(bar)
+    bar.forced_width = dpi(100)
+    bar.shape = helpers.rrect(beautiful.border_radius - 3)
+    bar.bar_shape = helpers.rrect(beautiful.border_radius - 3)
+    bar.background_color = beautiful.xcolor0
+    return bar
+end
 
 mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
-
-
 
 
 awful.screen.connect_for_each_screen(function(s)
@@ -34,15 +45,30 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytasklist = require("decor.bar.modules.tasklist")(s)
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    s.mywibox = awful.wibar({ position = "top", screen = s ,height = 25})
 
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
+        
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
-            s.mytaglist,
+            {{mylauncher,
+            bg = beautiful.xcolor0,
+            shape = helpers.rrect(beautiful.border_radius - 3),
+            widget = wibox.container.background },
+            margins = dpi(5),
+            widget = wibox.container.margin},
+            {
+                {
+                    s.mytaglist,
+                    bg = beautiful.xcolor0,
+                    shape = helpers.rrect(beautiful.border_radius - 3),
+                    widget = wibox.container.background
+                },
+                margins = dpi(5),
+                widget = wibox.container.margin
+            },
             s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
