@@ -86,6 +86,7 @@ require("decor.titlebar")
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
+   -- bling.module.flash_focus.enable()
 end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)

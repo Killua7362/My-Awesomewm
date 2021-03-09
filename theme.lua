@@ -7,6 +7,7 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
+local bling = require("bling")
 
 
 
@@ -61,6 +62,12 @@ theme.border_radius = dpi(12)
 theme.client_radius = dpi(12)
 theme.widget_border_width = dpi(1)
 theme.widget_border_color = theme.xcolor0
+
+theme.flash_focus_start_opacity = 0.6       -- the starting opacity
+theme.flash_focus_step = 0.01               -- the step of animation
+
+theme.systray_icon_spacing = dpi(15)
+theme.taglist_fg_focus = "#eaeaea"
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:

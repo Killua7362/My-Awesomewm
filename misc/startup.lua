@@ -7,6 +7,9 @@ do
         "nitrogen --restore",
         "xfce4-power-manager",
         --"/usr/bin/emacs --daemon &",
+        "sh ~/.local/bin/swapesc.sh",
+        "picom",
+        "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
         "sh ~/.local/bin/swapesc.sh"
 
     }

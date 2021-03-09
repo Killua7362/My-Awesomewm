@@ -50,6 +50,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
+        expand = "none",
         
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
@@ -71,20 +72,28 @@ awful.screen.connect_for_each_screen(function(s)
             },
             s.mypromptbox,
         },
-        {
+        { --center
             {
                 s.mytasklist,
-               -- bg = beautiful.xcolor0,
-                --shape = helpers.rrect(beautiful.border_radius - 3),
+                bg = beautiful.xcolor0,
+                shape = helpers.rrect(beautiful.border_radius - 3),
                 widget = wibox.container.background
             },
             margins = dpi(5),
             widget = wibox.container.margin
-        }, -- Middle widget
+        }, 
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
-            wibox.widget.systray(),
+           {{ {wibox.widget.systray(),
+             left =dpi(8),
+             right =  dpi(8),
+             widget = wibox.container.margin},
+            bg = beautiful.xcolor0,
+            shape = helpers.rrect(beautiful.border_radius - 3),
+            widget = wibox.container.background},
+            margins = dpi(5),
+            widget = wibox.container.margin},
             mytextclock,
             s.mylayoutbox,
         },

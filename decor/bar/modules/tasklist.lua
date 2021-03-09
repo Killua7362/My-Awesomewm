@@ -34,11 +34,7 @@ local get_tasklist = function(s)
         layout = {spacing = dpi(0), layout = wibox.layout.fixed.horizontal},
         widget_template = {
             {{
-                nil,
                 awful.widget.clienticon,
-                {id     = 'text_role',
-                widget = wibox.widget.textbox},
-                nil,
                 layout = wibox.layout.fixed.horizontal
             },
             top = dpi(5),

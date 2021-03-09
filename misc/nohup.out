@@ -1,0 +1,31 @@
+[ 07/03/21 18:52:32.956 wid_set_text_prop ERROR ] Failed to make text property: vgit-dac85.
+[ 07/03/21 18:52:32.956 register_cm ERROR ] Failed to set COMPTON_VERSION.
+[ 07/03/21 18:52:33.234 x_fence_sync ERROR ] Failed to trigger the fence (X error 136 XSyncBadFence request 134 minor 15 serial 1910)
+[ 07/03/21 18:52:33.234 paint_all ERROR ] x_fence_sync failed, xrender-sync-fence will be disabled from now on.
+[ 07/03/21 19:03:13.838 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x044003c0.
+[ 07/03/21 19:03:13.838 paint_one ERROR ] Failed to bind texture for window 0x01000029.
+[ 07/03/21 19:03:13.838 paint_one ERROR ] Window 0x01000029 is missing painting data.
+[ 07/03/21 19:39:03.569 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600025 ((null))
+[ 07/03/21 19:39:03.569 win_clear_flags WARN ] Flags cleared on a destroyed window 0x0060001e ((null))
+[ 07/03/21 19:39:16.679 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600026 ((null))
+[ 07/03/21 19:39:16.679 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600023 ((null))
+[ 07/03/21 19:39:22.547 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600026 ((null))
+[ 07/03/21 19:39:22.547 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600023 ((null))
+[ 07/03/21 19:39:35.894 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600026 ((null))
+[ 07/03/21 19:39:35.894 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600023 ((null))
+[ 07/03/21 19:40:17.781 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600026 ((null))
+[ 07/03/21 19:40:17.782 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600023 ((null))
+[ 07/03/21 19:43:25.032 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600026 ((null))
+[ 07/03/21 19:43:25.032 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600023 ((null))
+[ 07/03/21 19:43:39.928 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600025 ((null))
+[ 07/03/21 19:43:39.937 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600023 ((null))
+[ 07/03/21 19:47:36.258 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600026 ((null))
+[ 07/03/21 19:47:36.258 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600023 ((null))
+[ 07/03/21 19:48:17.736 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600025 ((null))
+[ 07/03/21 19:48:17.736 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600023 ((null))
+[ 07/03/21 19:48:40.827 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600025 ((null))
+[ 07/03/21 19:48:40.827 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600024 ((null))
+[ 07/03/21 19:56:18.920 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600025 ((null))
+[ 07/03/21 19:56:18.920 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600024 ((null))
+[ 07/03/21 19:56:31.418 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600023 ((null))
+[ 07/03/21 19:56:31.418 win_clear_flags WARN ] Flags cleared on a destroyed window 0x00600025 ((null))
