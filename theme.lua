@@ -7,10 +7,6 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
-local bling = require("bling")
-
-
-
 
 local theme = {}
 theme.xbackground =  "#1a2026"
@@ -68,6 +64,7 @@ theme.flash_focus_step = 0.01               -- the step of animation
 
 theme.systray_icon_spacing = dpi(15)
 theme.taglist_fg_focus = "#eaeaea"
+theme.tasklist_bg_minimize = "#eaeaea"
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:

@@ -14,9 +14,11 @@ clientbuttons = gears.table.join(
     awful.button({ main_var.modkey }, 1, function (c)
         c:emit_signal("request::activate", "mouse_click", {raise = true})
         awful.mouse.client.move(c)
-    end),
+        c.floating = true
+        end),
     awful.button({ main_var.modkey }, 3, function (c)
         c:emit_signal("request::activate", "mouse_click", {raise = true})
         awful.mouse.client.resize(c)
     end)
 )
+

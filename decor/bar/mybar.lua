@@ -85,7 +85,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
-           {{ {wibox.widget.systray(),
+           awful.widget.only_on_screen({{ {wibox.widget.systray(),
              left =dpi(8),
              right =  dpi(8),
              widget = wibox.container.margin},
@@ -93,7 +93,7 @@ awful.screen.connect_for_each_screen(function(s)
             shape = helpers.rrect(beautiful.border_radius - 3),
             widget = wibox.container.background},
             margins = dpi(5),
-            widget = wibox.container.margin},
+            widget = wibox.container.margin},screen[1]),
             mytextclock,
             s.mylayoutbox,
         },

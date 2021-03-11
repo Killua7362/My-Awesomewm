@@ -1,0 +1,13 @@
+[ 09/03/21 17:39:29.842 parse_blur_method WARN ] Blur method 'kawase' has been renamed to 'dual_kawase'. Interpreted as 'dual_kawase', but this will stop working soon.
+[ 09/03/21 17:39:29.842 parse_kawase_blur_strength INFO ] blur-strength: 7 [.iter = 3, .offset = 4.250000, .expand = 50]
+[ 09/03/21 17:39:29.894 glx_has_extension INFO ] Found GLX extension GLX_SGI_video_sync.
+[ 09/03/21 17:39:29.894 glx_has_extension INFO ] Found GLX extension GLX_SGI_swap_control.
+[ 09/03/21 17:39:29.894 glx_has_extension INFO ] Missing GLX extension GLX_OML_sync_control.
+[ 09/03/21 17:39:29.894 glx_has_extension INFO ] Missing GLX extension GLX_MESA_swap_control.
+[ 09/03/21 17:39:29.894 glx_has_extension INFO ] Found GLX extension GLX_EXT_swap_control.
+[ 09/03/21 17:39:29.894 glx_has_extension INFO ] Found GLX extension GLX_EXT_texture_from_pixmap.
+[ 09/03/21 17:39:29.894 glx_has_extension INFO ] Found GLX extension GLX_ARB_create_context.
+[ 09/03/21 17:39:29.894 glx_has_extension INFO ] Found GLX extension GLX_EXT_buffer_age.
+[ 09/03/21 17:39:29.894 glx_has_extension INFO ] Missing GLX extension GLX_MESA_query_renderer.
+[ 09/03/21 17:39:29.952 gl_has_extension INFO ] Missing GL extension GL_GREMEDY_string_marker.
+[ 09/03/21 17:39:29.952 gl_init INFO ] GL vendor is NVIDIA, don't use glFinish
