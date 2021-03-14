@@ -5,8 +5,8 @@ local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local helpers = require("helpers")
-
-
+lain = require("lain")
+require("evil.battery")
 local function format_progress_bar(bar)
     bar.forced_width = dpi(100)
     bar.shape = helpers.rrect(beautiful.border_radius - 3)
@@ -21,12 +21,30 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
+--battery widget
+local battery_bar = require("decor.bar.widgets.battery")
 
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     -- Each screen has its own tag table.
     
     awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+ ---removing screen doesnt kill tags
+    tag.connect_signal("request::screen", function(t)
+        t.selected = false
+        for s in capi.screen do
+            if s ~= t.screen then
+                t.screen = s
+                return
+            end
+        end
+    end)
+    
+    lain.layout.termfair.nmaster = 3
+    lain.layout.termfair.ncol    = 1
+    lain.layout.termfair.center.nmaster = 3
+    lain.layout.termfair.center.ncol    = 1
+
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -96,6 +114,7 @@ awful.screen.connect_for_each_screen(function(s)
             widget = wibox.container.margin},screen[1]),
             mytextclock,
             s.mylayoutbox,
+            battery_bar,
         },
     }
 end)

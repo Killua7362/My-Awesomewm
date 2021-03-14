@@ -3,6 +3,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 local gears = require("gears")
 local menubar = require("menubar")
 local main_var = require("misc.main_var")
+naughty = require("naughty")
 
 globalkeys = gears.table.join(
     awful.key({ main_var.modkey,           }, "s",      hotkeys_popup.show_help,
@@ -54,8 +55,8 @@ globalkeys = gears.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ main_var.modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ main_var.modkey, "Shift"   }, "q", awesome.quit,
-              {description = "quit awesome", group = "awesome"}),
+    awful.key({ main_var.modkey, "Shift"          }, "q", function () awful.spawn("arcolinux-logout") end,
+    {description = "Log out", group = "awesome"}),
 
     awful.key({ main_var.modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
@@ -102,6 +103,10 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ main_var.modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+    awful.key({ main_var.modkey, }, "z", function () awful.screen.focused().quake:toggle() end),
+    awful.key({ main_var.modkey, "Shift"   }, "w", function ()   naughty.notify({text = testingvar1})             end,
+    {description = "var1", group = "testing"})
 
 )
+-- 

@@ -10,7 +10,8 @@ do
         "sh ~/.local/bin/swapesc.sh",
         "picom",
         "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
-        "sh ~/.local/bin/swapesc.sh"
+        "sh ~/.local/bin/swapesc.sh",
+        "nm-applet"
 
     }
     for _,i in pairs(autostart_apps) do

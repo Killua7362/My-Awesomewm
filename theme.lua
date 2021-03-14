@@ -161,6 +161,18 @@ theme.awesome_icon = theme_assets.awesome_icon(
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil
 
+--lain icons
+theme.lain_icons         = os.getenv("HOME") ..
+                           "/.config/awesome/lain/icons/layout/default/"
+theme.layout_termfair    = theme.lain_icons .. "termfairw.png"
+theme.layout_centerfair  = theme.lain_icons .. "centerfairw.png"  -- termfair.center
+theme.layout_cascade     = theme.lain_icons .. "cascadew.png"
+theme.layout_cascadetile = theme.lain_icons .. "cascadetilew.png" -- cascade.tile
+theme.layout_centerwork  = theme.lain_icons .. "centerworkw.png"
+theme.layout_centerworkh = theme.lain_icons .. "centerworkhw.png" -- centerwork.horizontal
+--#FFFFFF
+
+
 return theme
 
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

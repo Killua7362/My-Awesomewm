@@ -28,13 +28,21 @@ local beautiful = require("beautiful")
 beautiful.init("/home/conan/.config/awesome/theme.lua")
 bling = require("bling")
 local machi = require("layout-machi")
+lain = require("lain")
+--mybattery = lain.widget.bat()
 
-bling.signal.playerctl.enable()
-
--- Table of layouts to cover with awful.layout.inc, order matters.
 require("misc.savefloats")
 require("misc.better-resize")
+local termfair = lain.layout.termfair
 require("misc.layouts")
+----testing
+--testingvar1 = mybattery.bat_now.perc
+
+
+
+bling.signal.playerctl.enable()
+-- Table of layouts to cover with awful.layout.inc, order matters.
+
 
 -- {{{ Menumymenu
 -- Menubar configuration
@@ -50,6 +58,12 @@ require("decor.bar.mybar")
 --keybindings
 require("bindings.mousebinding")
 require("bindings.clientkeys")
+
+awful.screen.connect_for_each_screen(function(s)
+  s.quake = lain.util.quake({app = "urxvt"})
+end)
+
+
 require("bindings.globalkeys")
 
 -- Bind all key numbers to tags.
@@ -91,4 +105,9 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+---testing
+
+
+
 -- }}}
