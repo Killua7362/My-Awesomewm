@@ -13,7 +13,9 @@ local wibox = require("wibox")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+local repetitive = require("repetitive")
 local hotkeys_popup = require("awful.hotkeys_popup")
+require("collision")()
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -26,6 +28,10 @@ editor_cmd = main_var.terminal .. " -e " .. main_var.editor
 
 local beautiful = require("beautiful")
 beautiful.init("/home/conan/.config/awesome/theme.lua")
+
+local nice = require("nice")
+nice()
+
 bling = require("bling")
 local machi = require("layout-machi")
 lain = require("lain")
@@ -95,7 +101,6 @@ client.connect_signal("manage", function (c)
     end
 end)
 
-require("decor.titlebar")
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)

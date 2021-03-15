@@ -8,10 +8,6 @@ naughty = require("naughty")
 globalkeys = gears.table.join(
     awful.key({ main_var.modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
-    awful.key({ main_var.modkey,           }, "Left",   awful.tag.viewprev,
-              {description = "view previous", group = "tag"}),
-    awful.key({ main_var.modkey,           }, "Right",  awful.tag.viewnext,
-              {description = "view next", group = "tag"}),
     awful.key({ main_var.modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
